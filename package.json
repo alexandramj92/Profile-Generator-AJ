@@ -1,0 +1,25 @@
+{
+  "name": "profile-generator-aj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandramj92/Profile-Generator-AJ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandramj92/Profile-Generator-AJ/issues"
+  },
+  "homepage": "https://github.com/alexandramj92/Profile-Generator-AJ#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "fs": "0.0.1-security",
+    "inquirer": "^7.0.0",
+    "pdfkit": "^0.10.0"
+  }
+}
