@@ -4,6 +4,8 @@ const inquirer = require("inquirer");
 const PDFDocument = require('pdfkit');
 const doc = new PDFDocument ({compress:false});
 
+
+
 let fullName="";
 let imgURL="";
 let company="";
@@ -88,74 +90,75 @@ inquirer.prompt([
 
 
 function generatePDF(){
+    console.log("generate pdf function");
 
-   //generate PDF
-   doc.pipe(fs.createWriteStream('file.pdf')); // write to PDF
-  //  doc.pipe(res); // HTTP response
-   // add stuff to PDF here using methods described below...
-   
-   doc
-   .rect(20, 50, 570, 250)
-   .fill(`${cardColor}`)
-
-   doc
-   .rect(80, 400, 200, 100)
-   .fill(`${cardColor}`)
-   .fontSize(20)
-   .fillColor('white')
-   .text('Public Repositories', 95, 440)
-   .text(`${publicRepos}`, 160)
-
-   doc
-   .rect(340, 400, 200, 100)
-   .fill(`${cardColor}`)
-   .fontSize(20)
-   .fillColor('white')
-   .text('Followers', 400, 440)
-   .text(`${followers}`, 420)
-
-   doc
-   .rect(80, 540, 200, 100)
-   .fill(`${cardColor}`)
-   .fontSize(20)
-   .fillColor('white')
-   .text('Github Stars', 120, 580)
-   .text(`${githubStars}`, 160)
-   
-   
-  doc
-   .rect(340, 540, 200, 100)
-   .fill(`${cardColor}`)
-   .fontSize(20)
-   .fillColor('white')
-   .text('Following', 400, 580)
-   .text(`${following}`, 420)
-
-   doc.fillColor('white').fontSize(30).text('Hi!', 300, 150)
-   doc.fillColor('white').fontSize(30).text(`My name is ${fullName}!`, 120)
-   doc.fillColor('white').fontSize(20).text(`Currently @ ${company}`, 190)
-   doc.fillColor('white').fontSize(20).text(`${location}`, 170, 270)
-
-   doc.fillColor('white').fontSize(20).text('github', 290, 270)
-   const widthGl = doc.widthOfString('github');
-   const heightGl = doc.currentLineHeight();
-   doc.link(290, 270, widthGl, heightGl, `${githubLink}`);
-
-
-   doc.fillColor('white').fontSize(20).text("blog", 420, 270)
-  const widthB = doc.widthOfString('blog');
-  const heightB = doc.currentLineHeight();
-  doc.link(420, 270, widthB, heightB, `${blog}`);
-
+    //generate PDF
+    doc.pipe(fs.createWriteStream('Github-Profile.pdf')); // write to PDF
+    //  doc.pipe(res); // HTTP response
+     // add stuff to PDF here using methods described below...
+     
+     doc
+     .roundedRect(20, 50, 570, 250, 10)
+     .fill(`${cardColor}`)
   
-
-   doc.moveDown()
-   doc.fillColor('black').fontSize(25)
-   .text('I build things and teach people to code', 100)
-
-   
-   // finalize the PDF and end the stream
-   doc.end();
+     doc
+     .roundedRect(80, 400, 200, 100, 10)
+     .fill(`${cardColor}`)
+     .fontSize(20)
+     .fillColor('white')
+     .text('Public Repositories', 95, 435)
+     .text(`${publicRepos}`, 165)
+  
+     doc
+     .roundedRect(340, 400, 200, 100, 10)
+     .fill(`${cardColor}`)
+     .fontSize(20)
+     .fillColor('white')
+     .text('Followers', 400, 435)
+     .text(`${followers}`, 425)
+  
+     doc
+     .roundedRect(80, 540, 200, 100, 10)
+     .fill(`${cardColor}`)
+     .fontSize(20)
+     .fillColor('white')
+     .text('Github Stars', 120, 575)
+     .text(`${githubStars}`, 160)
+     
+     
+    doc
+     .roundedRect(340, 540, 200, 100, 10)
+     .fill(`${cardColor}`)
+     .fontSize(20)
+     .fillColor('white')
+     .text('Following', 400, 575)
+     .text(`${following}`, 425)
+  
+     doc.fillColor('white').fontSize(30).text('Hi!', 290, 100)
+     doc.fillColor('white').fontSize(30).text(`My name is ${fullName}!`, 140)
+     doc.fillColor('white').fontSize(20).text(`Currently at ${company}`, 220)
+     doc.fillColor('white').fontSize(20).text(`${location}`, 70, 270)
+  
+     doc.fillColor('white').fontSize(20).text('github', 290, 270)
+     const widthGl = doc.widthOfString('github');
+     const heightGl = doc.currentLineHeight();
+     doc.link(290, 270, widthGl, heightGl, `${githubLink}`);
+  
+  
+     doc.fillColor('white').fontSize(20).text("blog", 470, 270)
+    const widthB = doc.widthOfString('blog');
+    const heightB = doc.currentLineHeight();
+    doc.link(420, 270, widthB, heightB, `${blog}`);
+  
+    
+  
+     doc.moveDown()
+     doc.fillColor('black').fontSize(25)
+     .text('I build things and teach people to code', 100)
+  
+     
+     // finalize the PDF and end the stream
+     doc.end();
    
 
 

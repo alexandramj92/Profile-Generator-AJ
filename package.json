@@ -18,8 +18,14 @@
   "homepage": "https://github.com/alexandramj92/Profile-Generator-AJ#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "electron": "^7.1.2",
+    "electron-html-to": "^2.6.0",
+    "electron-prebuilt": "^1.4.13",
+    "electron-workers": "^1.10.3",
     "fs": "0.0.1-security",
+    "html-to-pdf": "^0.1.11",
     "inquirer": "^7.0.0",
     "pdfkit": "^0.10.0"
-  }
+  },
+  "devDependencies": {}
 }
