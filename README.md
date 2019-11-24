@@ -11,7 +11,7 @@ After the user inputs the github username of the person they would like to gener
 Additionally, the user is prompted to input their favorite color. The color is used for the background of the cards in the PDF. 
 
 See example of how the aplication functions below. 
-![Pdf profile generator](Profile-Generator.mp4)
+![Pdf profile generator](Profile-Generator.GIF)
 
 I used the pdfkit npm package to generate the pdf with the data retrieved from github. 
 
