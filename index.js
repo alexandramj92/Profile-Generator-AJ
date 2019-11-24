@@ -154,7 +154,7 @@ function generatePDF(){
   
      doc.moveDown()
      doc.fillColor('black').fontSize(25)
-     .text('I build things and teach people to code', 100)
+     .text('I build things and teach people to code.', 100)
   
      
      // finalize the PDF and end the stream
