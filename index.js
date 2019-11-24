@@ -49,40 +49,29 @@ inquirer.prompt([
    
 
         fullName = res.data.name;
-        console.log(fullName);
 
         imgURL = res.data.avatar_url;
-        console.log(imgURL);
 
         company =  res.data.company;
-        console.log(company);
 
         blog = res.data.blog;
-        console.log(blog);
 
         location = res.data.location; 
-        console.log(location);
 
         email = res.data.email;
-        console.log(email);
 
         githubLink = res.data.html_url;
-        console.log(githubLink);
 
         publicRepos = res.data.public_repos;
-        console.log(publicRepos);
 
         followers = res.data.followers;
-        console.log(followers);
 
         following = res.data.following;
-        console.log(following);
     });
 
     axios.get(starredUrl).then(function(res){
         // retrieving the length of starred repositories to get the number of github stars
         githubStars = res.data.length;
-        console.log(githubStars);
         generatePDF();
 
     });
@@ -90,7 +79,6 @@ inquirer.prompt([
 
 
 function generatePDF(){
-    console.log("generate pdf function");
 
     //generate PDF
     doc.pipe(fs.createWriteStream('Github-Profile.pdf')); // write to PDF
